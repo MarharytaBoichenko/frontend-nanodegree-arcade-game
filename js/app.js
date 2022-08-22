@@ -1,6 +1,7 @@
 // Enemies our player must avoid
-const FIELDWIDTH = 505;
-const FIELDHEIGHT = 606;
+const CELL = 101;
+const FIELDWIDTH = 5 * CELL;
+const FIELDHEIGHT = 6 * CELL;
 const BUGWIDTH = 90;
 const PLAYERWIDTH = 91;
 
