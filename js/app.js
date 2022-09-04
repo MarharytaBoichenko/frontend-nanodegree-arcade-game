@@ -46,6 +46,7 @@ class Enemy {
       Math.round(this.y) === player.y
     ) {
       player.reset();
+      alert("Boom! Game over(((");
     }
   }
 
@@ -87,17 +88,23 @@ class Player {
   reset() {
     this.y = playerStartY;
     this.x = playerStartX;
-    alert("Boom! Game over!");
+  }
+
+  showCongrats() {
+    this.reset();
+    alert("Congratulations!!!");
   }
 
   updateToStart() {
     if (
       this.y > field.bottom - playerStepY * 2 ||
-      this.y < field.top ||
       this.x > field.right ||
       this.x < field.left
     ) {
       this.reset();
+    }
+    if (this.y < field.top) {
+      this.showCongrats();
     }
   }
 }
