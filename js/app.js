@@ -41,10 +41,9 @@ class Enemy {
 
   handleCollision() {
     if (
-      Math.round(this.x) === player.x &&
-      Math.round(this.y) === player.y &&
-      Math.round(this.x) + playerStepX > player.x &&
-      Math.round(this.y) + playerStepY > player.y
+      Math.round(this.x) + BUGWIDTH * 0.7 > player.x &&
+      Math.round(this.x) < player.x &&
+      Math.round(this.y) === player.y
     ) {
       player.reset();
     }
@@ -88,6 +87,7 @@ class Player {
   reset() {
     this.y = playerStartY;
     this.x = playerStartX;
+    alert("Boom! Game over!");
   }
 
   updateToStart() {
